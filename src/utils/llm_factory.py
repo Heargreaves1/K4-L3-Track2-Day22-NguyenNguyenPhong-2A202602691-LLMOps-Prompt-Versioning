@@ -113,6 +113,7 @@ def get_embeddings(provider: str = None):
         }
         if config.OPENAI_BASE_URL:
             kwargs["base_url"] = config.OPENAI_BASE_URL
+            kwargs["check_embedding_ctx_length"] = False
         return OpenAIEmbeddings(**kwargs)
 
     elif provider == "gemini":
